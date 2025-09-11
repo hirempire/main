@@ -1,10 +1,572 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Pages Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirempire Assets & Brand Guidelines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #3349C0 0%, #4158D0 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #3349C0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background-color: #f0f2ff;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #3349C0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-preview {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .color-info {
+            padding: 1.5rem;
+        }
+
+        .color-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .color-values {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Typography */
+        .typography-section {
+            background: #f8f9ff;
+            padding: 3rem 0;
+            border-radius: 20px;
+        }
+
+        .font-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .font-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .font-preview {
+            margin-bottom: 1.5rem;
+        }
+
+        .font-preview h3 {
+            margin-bottom: 1rem;
+            color: #3349C0;
+        }
+
+        .sample-text {
+            margin-bottom: 1rem;
+        }
+
+        .heading-sample {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .body-sample {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 20px;
+        }
+
+        .logo-display {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(51, 73, 192, 0.15);
+            margin: 2rem 0;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3349C0;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: #3349C0;
+            color: white;
+            padding: 3rem 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #3349C0;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #f0f2ff;
+            transform: translateY(-2px);
+        }
+
+        /* Usage Guidelines */
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .guideline-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #3349C0;
+        }
+
+        .guideline-title {
+            color: #3349C0;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                gap: 1rem;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .heading-sample {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my GitHub Pages site!</p>
+    <header>
+        <div class="container">
+            <div class="logo">Hirempire</div>
+            <p class="tagline">Brand Assets & Guidelines for Consistent Brand Identity</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#logo" class="nav-link">Logo</a>
+                <a href="#colors" class="nav-link">Colors</a>
+                <a href="#typography" class="nav-link">Typography</a>
+                <a href="#downloads" class="nav-link">Downloads</a>
+                <a href="#guidelines" class="nav-link">Guidelines</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Logo Section -->
+            <section id="logo" class="section">
+                <h2 class="section-title">Logo</h2>
+                <div class="logo-section">
+                    <p>Our logo represents innovation, professionalism, and growth in the hiring industry.</p>
+                    <div class="logo-display">
+                        <div class="logo-text">Hirempire</div>
+                    </div>
+                    <p>Always maintain clear space around the logo equal to the height of the "H" in Hirempire.</p>
+                </div>
+            </section>
+
+            <!-- Color Palette -->
+            <section id="colors" class="section">
+                <h2 class="section-title">Color Palette</h2>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #3349C0;">Primary Blue</div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Blue</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #3349C0</span>
+                                <span class="color-value">RGB: 51, 73, 192</span>
+                                <span class="color-value">HSL: 232°, 58%, 48%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #4158D0;">Secondary Blue</div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Blue</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #4158D0</span>
+                                <span class="color-value">RGB: 65, 88, 208</span>
+                                <span class="color-value">HSL: 230°, 61%, 54%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #333333;">Dark Gray</div>
+                        <div class="color-info">
+                            <div class="color-name">Dark Gray</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #333333</span>
+                                <span class="color-value">RGB: 51, 51, 51</span>
+                                <span class="color-value">HSL: 0°, 0%, 20%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #666666; color: white;">Medium Gray</div>
+                        <div class="color-info">
+                            <div class="color-name">Medium Gray</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #666666</span>
+                                <span class="color-value">RGB: 102, 102, 102</span>
+                                <span class="color-value">HSL: 0°, 0%, 40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #F8F9FF; color: #333;">Light Blue</div>
+                        <div class="color-info">
+                            <div class="color-name">Light Blue</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #F8F9FF</span>
+                                <span class="color-value">RGB: 248, 249, 255</span>
+                                <span class="color-value">HSL: 231°, 100%, 99%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #FFFFFF; color: #333; border: 1px solid #eee;">White</div>
+                        <div class="color-info">
+                            <div class="color-name">White</div>
+                            <div class="color-values">
+                                <span class="color-value">HEX: #FFFFFF</span>
+                                <span class="color-value">RGB: 255, 255, 255</span>
+                                <span class="color-value">HSL: 0°, 0%, 100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography -->
+            <section id="typography" class="section">
+                <h2 class="section-title">Typography</h2>
+                <div class="typography-section">
+                    <div class="container">
+                        <div class="font-demo">
+                            <div class="font-card">
+                                <div class="font-preview">
+                                    <h3>Space Grotesk - Headings</h3>
+                                    <div class="sample-text">
+                                        <div class="heading-sample">The Future of Hiring</div>
+                                    </div>
+                                    <p>Used for all headings, titles, and logo text. Weights: 300, 400, 500, 600, 700</p>
+                                </div>
+                            </div>
+                            
+                            <div class="font-card">
+                                <div class="font-preview">
+                                    <h3>Manrope - Body Text</h3>
+                                    <div class="sample-text">
+                                        <div class="body-sample">This is our primary body text font. It's clean, modern, and highly readable across all devices and platforms. Perfect for paragraphs, descriptions, and user interface elements.</div>
+                                    </div>
+                                    <p>Used for body text, descriptions, and UI elements. Weights: 300, 400, 500, 600, 700</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Downloads -->
+            <section id="downloads" class="section">
+                <div class="download-section">
+                    <div class="container">
+                        <h2 style="color: white; margin-bottom: 1rem;">Download Assets</h2>
+                        <p>Download our brand assets for your projects and presentations.</p>
+                        
+                        <div class="download-grid">
+                            <div class="download-card">
+                                <h3>Logo Package</h3>
+                                <p>SVG, PNG, and PDF formats in various sizes</p>
+                                <a href="#" class="download-btn">Download Logos</a>
+                            </div>
+                            
+                            <div class="download-card">
+                                <h3>Brand Guidelines</h3>
+                                <p>Complete PDF guide with usage instructions</p>
+                                <a href="#" class="download-btn">Download Guide</a>
+                            </div>
+                            
+                            <div class="download-card">
+                                <h3>Color Palette</h3>
+                                <p>ASE and ACO files for design software</p>
+                                <a href="#" class="download-btn">Download Colors</a>
+                            </div>
+                            
+                            <div class="download-card">
+                                <h3>Font Files</h3>
+                                <p>Web fonts and desktop font files</p>
+                                <a href="#" class="download-btn">Download Fonts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guidelines -->
+            <section id="guidelines" class="section">
+                <h2 class="section-title">Usage Guidelines</h2>
+                <div class="guidelines-grid">
+                    <div class="guideline-card">
+                        <h3 class="guideline-title">Logo Usage</h3>
+                        <ul>
+                            <li>Always maintain clear space around the logo</li>
+                            <li>Use the primary blue (#3349C0) on light backgrounds</li>
+                            <li>Use white version on dark backgrounds</li>
+                            <li>Never distort, rotate, or modify the logo</li>
+                            <li>Minimum size: 120px width for digital use</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guideline-card">
+                        <h3 class="guideline-title">Color Guidelines</h3>
+                        <ul>
+                            <li>Primary blue is our main brand color</li>
+                            <li>Use secondary blue for gradients and accents</li>
+                            <li>Gray tones for text and subtle elements</li>
+                            <li>Maintain WCAG AA contrast ratios</li>
+                            <li>Light blue for backgrounds and subtle highlights</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guideline-card">
+                        <h3 class="guideline-title">Typography Rules</h3>
+                        <ul>
+                            <li>Use Space Grotesk for all headings and titles</li>
+                            <li>Use Manrope for body text and descriptions</li>
+                            <li>Maintain proper hierarchy with font weights</li>
+                            <li>Ensure readability across all devices</li>
+                            <li>Line height should be 1.4-1.6 for body text</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guideline-card">
+                        <h3 class="guideline-title">Brand Voice</h3>
+                        <ul>
+                            <li>Professional yet approachable</li>
+                            <li>Innovative and forward-thinking</li>
+                            <li>Clear and concise communication</li>
+                            <li>Empowering and confident tone</li>
+                            <li>Human-centered and empathetic</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hirempire. All rights reserved. | For questions about brand usage, contact us at brand@hirempire.com</p>
+        </div>
+    </footer>
 </body>
 </html>
